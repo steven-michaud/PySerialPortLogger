@@ -27,7 +27,7 @@ Ctrl-C to exit
 
 All text output written to `/dev/ttys002` will get written to your
 terminal window. Each line of output needs to end with a newline
-character (`\n').
+character (`\n`).
 
 Here are code fragments, in C and Python, which you can use to write
 to this serial port:
