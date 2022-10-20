@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PySerialPortLogger"
+version = "1.0.0"
+authors = [
+  { name="Steven Michaud", email="smichaud@pobox.com" }
+]
+description = "An easy way to log output in a complex POSIX environment"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.5"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX",
+    "Intended Audience :: Developers",
+]
+keywords = [
+    "virtual serial port",
+    "virtual com port",
+    "logger",
+    "logging",
+    "python",
+    "POSIX",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/steven-michaud/PySerialPortLogger"
+"Bug Tracker" = "https://github.com/steven-michaud/PySerialPortLogger/issues"
+
+[project.scripts]
+serialportlogger = "serialportlogger:main"
+

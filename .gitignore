@@ -1,0 +1,15 @@
+*~
+._*
+*.DS_Store
+
+# Python
+venv*/
+*.py[cdo]
+*.egg-info
+*.egg
+__pycache__
+build/
+dist/
+
+# PyCharm
+.idea/
