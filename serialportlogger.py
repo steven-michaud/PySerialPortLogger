@@ -58,7 +58,7 @@ def run():
     slave_name = os.ttyname(slave_fd)
     # Open in text mode, to receive text input. Each line of input must end
     # in a newline character ('\n').
-    master_file = open(master_fd, mode='r+t', buffering=1)
+    master_file = open(master_fd, mode='rt', buffering=1)
     print('Ctrl-C to exit')
     print(slave_name)
 
@@ -73,7 +73,7 @@ def run():
                 if not events & EVENT_READ:
                     continue
 
-                data = master_file.read()
+                data = master_file.readline()
                 print(data, end='', file=sys.stderr)
 
 def main():
