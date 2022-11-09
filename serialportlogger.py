@@ -73,8 +73,20 @@ def run():
                 if not events & EVENT_READ:
                     continue
 
-                data = master_file.readline()
-                print(data, end='', file=sys.stderr)
+                # Sometimes readline() doesn't read to the end of a line. So
+                # use multiple calls, if need be, to grab everything that's
+                # available. This also grabs multiple lines, if they're
+                # available. Doing this makes it less likely that contention
+                # between different threads and processes will result in
+                # broken lines of output.
+                alldata = ''
+                while True:
+                    data = master_file.readline()
+                    alldata = alldata + data
+                    if data == '':
+                        if (alldata != ''):
+                            print(alldata, end='', file=sys.stderr)
+                        break
 
 def main():
     parser = argparse.ArgumentParser (
